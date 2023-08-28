@@ -4,6 +4,7 @@ use todos_integrity::*;
 pub fn create_todo_item(todo_item: TodoItem) -> ExternResult<Record> {
     let todo_item_hash = create_entry(&EntryTypes::TodoItem(todo_item.clone()))?;
     println!("todo_item_hash: {:?}", todo_item_hash);
+    println!("todo_item: {:?}", todo_item);
     let record = get(todo_item_hash.clone(), GetOptions::default())?
         .ok_or(
             wasm_error!(

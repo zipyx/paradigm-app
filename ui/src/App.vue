@@ -6,7 +6,6 @@
     <div v-else>
       <div id="content" style="display: flex; flex-direction: column; flex: 1">
         <CreateTodoItem></CreateTodoItem>
-        <MyTodos author="{client.myPubKey}"></MyTodos>
         <h2>EDIT ME! Add the components of your app here.</h2>
 
         <span
