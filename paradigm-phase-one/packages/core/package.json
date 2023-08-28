@@ -1,0 +1,14 @@
+{
+  "name": "@paradigm-phase-one/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "vitest": "^0.34.2",
+    "@types/node": "^20.5.6",
+    "sst": "^2.24.14"
+  }
+}
