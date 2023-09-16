@@ -4,11 +4,11 @@ export function DatabaseStack({ stack }: StackContext) {
   // create database instance
   const database = new RDS(stack, "Database", {
     engine: "postgresql13.9",
-    defaultDatabaseName: "server_holochain",
+    defaultDatabaseName: "patient_records",
   });
 
-  // create dynamodb table for server side events
-  const serverSideTable = new Table(stack, `central-table`, {
+  // dynamodb table for server side event services
+  const hAppAgentServices = new Table(stack, `hApp-agent-services`, {
     fields: {
       id: "string",
       name: "string",
@@ -16,13 +16,12 @@ export function DatabaseStack({ stack }: StackContext) {
     primaryIndex: { partitionKey: "id", sortKey: "name" },
   });
 
-  // create dynamodb table for holochain app
-  const holochainTable = new Table(stack, `holochain-table`, {
+  // dynamodb table for holochain app agent connections established
+  const hAppAgentConnections = new Table(stack, `hApp-agent-connections`, {
     fields: {
       id: "string",
-      name: "string",
     },
-    primaryIndex: { partitionKey: "id", sortKey: "name" },
+    primaryIndex: { partitionKey: "id" },
   });
 
   // display outputs
@@ -32,12 +31,13 @@ export function DatabaseStack({ stack }: StackContext) {
     DatabaseClusterArn: database.clusterArn,
     DatabaseClusterPort: database.clusterEndpoint.port.toString(),
     DatabaseClusterHostname: database.clusterEndpoint.hostname,
-    DynamoDBServerTable: serverSideTable.tableName,
-    DynamoDBHolochainTable: holochainTable.tableName,
+    DynamoDBHolochainAppAgentServices: hAppAgentServices.tableName,
+    DynamoDBHolochainAppAgentConnections: hAppAgentConnections.tableName,
   });
 
   return {
     database,
-    serverSideTable,
+    hAppAgentServices,
+    hAppAgentConnections,
   };
 }

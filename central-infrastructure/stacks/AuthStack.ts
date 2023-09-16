@@ -8,12 +8,12 @@ export function AuthStack({ stack, app }: StackContext) {
 
   // display output
   stack.addOutputs({
-    region: app.region,
-    appStage: app.stage,
-    userPoolId: auth.userPoolId,
-    userPoolArn: auth.userPoolArn,
-    userPoolClientId: auth.userPoolClientId,
-    cognitoIdentityPoolId: auth.cognitoIdentityPoolId,
+    Region: app.region,
+    AppStage: app.stage,
+    UserPoolId: auth.userPoolId,
+    UserPoolArn: auth.userPoolArn,
+    UserPoolClientId: auth.userPoolClientId,
+    CognitoIdentityPoolId: auth.cognitoIdentityPoolId,
   });
 
   // Share resource

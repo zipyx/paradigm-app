@@ -1,7 +1,7 @@
 import { APIGatewayProxyHandlerV2WithJWTAuthorizer } from "aws-lambda";
 
 export const main: APIGatewayProxyHandlerV2WithJWTAuthorizer = async (
-  event
+  event,
 ) => {
   return {
     statusCode: 200,
@@ -11,7 +11,7 @@ export const main: APIGatewayProxyHandlerV2WithJWTAuthorizer = async (
         input: event,
       },
       null,
-      2
+      2,
     ),
   };
 };
