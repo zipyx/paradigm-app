@@ -19,7 +19,7 @@ export function SNSStack({ stack }: StackContext) {
     },
     subscribers: {
       holochainIntegratedServiceQueues:
-        "packages/functions/handlers/services/topic/subscriber/holochainIntegratedServiceQueues.main",
+        "packages/functions/handlers/services/topic/subscriber/hAppIntegratedServiceQueues.main",
     },
   });
 

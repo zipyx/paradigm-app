@@ -5,7 +5,7 @@ import { Table } from "sst/node/table";
 import { APIGatewayProxyHandler } from "aws-lambda";
 
 const sns = new AWS.SNS();
-const TableName = Table["holochain-agent-connections"].tableName;
+const TableName = Table["hApp-agent-connections"].tableName;
 const dynamoDb = new DynamoDB.DocumentClient();
 
 export const main: APIGatewayProxyHandler = async (event) => {

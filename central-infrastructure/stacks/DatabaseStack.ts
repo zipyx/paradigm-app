@@ -20,6 +20,9 @@ export function DatabaseStack({ stack }: StackContext) {
   const hAppAgentConnections = new Table(stack, `hApp-agent-connections`, {
     fields: {
       id: "string",
+      connected_at: "number",
+      ip_address: "string",
+      message: "string",
     },
     primaryIndex: { partitionKey: "id" },
   });

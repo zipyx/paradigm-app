@@ -7,7 +7,7 @@ const dynamoDb = new DynamoDB.DocumentClient();
 export const main: APIGatewayProxyHandler = async (event) => {
   const params = {
     // TableName: Table.Connections.tableName,
-    TableName: Table["holochain-agent-connections"].tableName,
+    TableName: Table["hApp-agent-connections"].tableName,
     Key: {
       id: event.requestContext.connectionId,
     },

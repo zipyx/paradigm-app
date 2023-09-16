@@ -16,7 +16,7 @@ export async function main(event: SNSEvent) {
   await sqs
     .sendMessage({
       // Get the queue url from the environment variable
-      QueueUrl: Queue.PatientDbQueue.queueUrl,
+      QueueUrl: Queue.PatientRecordQueue.queueUrl,
       MessageBody: JSON.stringify({ data: records[0].Sns.Message }),
     })
     .promise();
@@ -38,7 +38,7 @@ export async function main(event: SNSEvent) {
   await sqs
     .sendMessage({
       // Get the queue url from the environment variable
-      QueueUrl: Queue.HealthResearchQueue.queueUrl,
+      QueueUrl: Queue.ResearchQueue.queueUrl,
       MessageBody: JSON.stringify({ data: records[0].Sns.Message }),
     })
     .promise();
