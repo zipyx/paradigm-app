@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "websocket-ts": "^2.1.4"
+  }
+}
