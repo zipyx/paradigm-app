@@ -7,10 +7,14 @@
     "typecheck": "tsc -noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.121",
-    "@types/node": "^20.6.0",
-    "aws-sdk": "^2.1457.0",
-    "sst": "^2.25.1",
-    "vitest": "^0.34.4"
+    "@types/aws-lambda": "^8.10.126",
+    "@types/node": "^20.9.0",
+    "aws-cdk": "^2.109.0",
+    "axios": "^1.6.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwk-to-pem": "^2.0.5",
+    "sst": "^2.36.1",
+    "util": "^0.12.5",
+    "vitest": "^0.34.6"
   }
 }

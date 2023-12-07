@@ -1,4 +1,4 @@
-import { WebSocketApi, StackContext, use } from "sst/constructs";
+import { Function, WebSocketApi, StackContext, use } from "sst/constructs";
 import { DatabaseStack } from "./DatabaseStack";
 import { SNSStack } from "./SNSStack";
 
@@ -9,6 +9,12 @@ export function WebSocketApiStack({ stack }: StackContext) {
 
   // build API
   const api = new WebSocketApi(stack, "Api", {
+    authorizer: {
+      type: "lambda",
+      function: new Function(stack, "Authorizer", {
+        handler: "packages/functions/handlers/services/authentication/authorizer.main",
+      }),
+    },
     defaults: {
       function: {
         timeout: 20,
