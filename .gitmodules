@@ -1,0 +1,3 @@
+[submodule "idsov-hApp"]
+	path = idsov-hApp
+	url = https://github.com/zipyx/idsov
