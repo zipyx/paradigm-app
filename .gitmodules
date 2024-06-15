@@ -1,3 +1,9 @@
 [submodule "idsov-hApp"]
 	path = idsov-hApp
 	url = https://github.com/zipyx/idsov
+[submodule "idsov-concept"]
+	path = idsov-concept
+	url = https://github.com/zipyx/idsov-concept.git
+[submodule "idsov-iwi"]
+	path = idsov-iwi
+	url = https://github.com/zipyx/idsov-iwi.git
